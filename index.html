@@ -3,17 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Carolyn's Library</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <script src="./script.js" defer></script>
    <div class="container">
-        <div class="header">My Shelf</div>
+        <div class="header">
+            <div class="main-title">Carolyn's Library</div>    
+        </div>
+        <div class="add-button">+</div>
         <div class="library">
 
         </div>
-        <div class="add-button">Add New Book!</div>
+        <div class="dialog-wrapper">
+            <dialog id="bookFormDialog" close>
+                <form method ="dialog" id="bookForm">
+                    <div class="form-inputs">
+                        <div class="dialogHeader">Shelve a New Book!</div>
+                        <div class="field-pair">
+                            <label for="title">Title</label>
+                            <input type="text" id="title">
+                        </div>
+                        <div class="field-pair">
+                            <label for="author">Author</label>
+                            <input type="text" id="author">
+                        </div>
+                        <div class="field-pair">
+                            <label for="pages"># of Pages</label>
+                            <input type="number" id="pages">
+                        </div>
+                        <div class="field-pair">
+                            <label for="read">Read?</label>
+                            <input type="checkbox" id="read">
+                        </div>
+                        <div class="dialog-buttons">
+                            <button id='formSubmitButton'>Submit</button>
+                            <button id="formCloseButton" onClick="bookForm.reset()">Cancel</button>
+                        </div>
+                        
+                    </div>
+                </form>
+                
+            </dialog>
+        </div>
     </div>
+
 </body>
 </html>
