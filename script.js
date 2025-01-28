@@ -21,6 +21,19 @@ formCloseButton.addEventListener("click",()=>
 formSubmitButton.addEventListener("click",()=>
     submitForm());
 
+class Book {
+    constructor(title, author, pages, read, index) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.index = index;
+    }
+    toggleRead() {
+        this.read = !this.read;
+    }
+}
+
 const myLibrary = [
     new Book("Autocracy Inc.","Anne Applebaum","212",true,0),
     new Book("A Little Life","Hanya Yanagihara","805",false,1),
@@ -30,16 +43,7 @@ const myLibrary = [
 
 let activeIndex= myLibrary.length
 
-function Book(title, author, pages, read, index) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.index = index;
-    this.toggleRead = function() {
-        this.read = !this.read;
-    }
-}
+
 
 function addBookToLibrary(title, author, pages, read) {
     index=activeIndex;
