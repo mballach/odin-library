@@ -19,7 +19,13 @@ formCloseButton.addEventListener("click",()=>
     closeForm());
 
 formSubmitButton.addEventListener("click",()=>
-    submitForm());
+    {
+        if (bookForm.checkValidity()==true){
+    submitForm()} else {
+        alert("Please fill out all fields")
+    }
+    })
+    ;
 
 class Book {
     constructor(title, author, pages, read, index) {
@@ -43,8 +49,6 @@ const myLibrary = [
 
 let activeIndex= myLibrary.length
 
-
-
 function addBookToLibrary(title, author, pages, read) {
     index=activeIndex;
     activeIndex++;
@@ -56,10 +60,6 @@ function addBookToLibrary(title, author, pages, read) {
 function shelveBook(entry){   
     let newEntry=document.createElement("div")
     newEntry.setAttribute("class","book")
-    
-    /*let newIndex = document.createElement('div');
-    newIndex.setAttribute("class","title"); 
-    newIndex.innerHTML = entry.index;*/
 
     let newTitle = document.createElement('div');
     newTitle.setAttribute("class","title"); 
@@ -154,14 +154,14 @@ function convertRead(i){
 
 function closeForm(){
     bookForm.reset();
-    bookFormDialog.close;
+    bookFormDialog.close();
     
 }
 
 function submitForm(){
     addBookToLibrary(titleInput.value, authorInput.value, pagesInput.value, readInput.checked)
     bookForm.reset();
-    bookFormDialog.close;
+    bookFormDialog.close();
 }
 
 reShelve()

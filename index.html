@@ -18,28 +18,28 @@
         </div>
         <div class="dialog-wrapper">
             <dialog id="bookFormDialog" close>
-                <form method ="dialog" id="bookForm">
+                <form method ="dialog" id="bookForm" novalidate>
                     <div class="form-inputs">
                         <div class="dialogHeader">Shelve a New Book!</div>
                         <div class="field-pair">
                             <label for="title">Title</label>
-                            <input type="text" id="title">
+                            <input type="text" id="title" required>
                         </div>
                         <div class="field-pair">
                             <label for="author">Author</label>
-                            <input type="text" id="author">
+                            <input type="text" id="author" required>
                         </div>
                         <div class="field-pair">
                             <label for="pages"># of Pages</label>
-                            <input type="number" id="pages">
+                            <input type="number" id="pages" required>
                         </div>
                         <div class="field-pair">
                             <label for="read">Read?</label>
                             <input type="checkbox" id="read">
                         </div>
                         <div class="dialog-buttons">
-                            <button id='formSubmitButton'>Submit</button>
-                            <button id="formCloseButton" onClick="bookForm.reset()">Cancel</button>
+                            <button type="button" id='formSubmitButton'>Submit</button>
+                            <button type="button" id="formCloseButton">Cancel</button>
                         </div>
                         
                     </div>
